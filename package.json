@@ -1,0 +1,25 @@
+{
+  "name": "meet-express",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "bin/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinejend/meet-express.git"
+  },
+  "author": "chris jend.",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/christinejend/meet-express/issues"
+  },
+  "homepage": "https://github.com/christinejend/meet-express#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "hbs": "^4.0.1",
+    "response-time": "^2.3.1"
+  }
+}
