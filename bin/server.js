@@ -29,7 +29,7 @@ var express = require("express"),
 
 	// Configure le moteur de template voir guide sur site 
 	oApp.set( "views", __dirname + "/views"); //Definit une proppriété, qui est le dossier dans lequel on va stocker les fichers template
-	oApp.set("view engine", "hbs"); //Utilise le moteur de template hbs, definit le lg a utiliser
+	oApp.set("view engine", "pug"); //Utilise le moteur de template hbs, definit le lg a utiliser
 
 	// Configuration ROOT
 	//1 

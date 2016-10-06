@@ -1,0 +1,84 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title(lang="en") Meet AJAX
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+    body
+        main.container
+            header.row.page-header
+                h1.col-md-12
+                    span(lang="en") Meet AJAX
+                    small Votre nouveau super-coupaing
+            section.content.row
+                h2.hidden Un exercice haut en couleurs…
+                div.col-md-4
+                    h3 L'album des coupaings
+                    div.row#buddies-container
+                        each buddy in buddies
+                                div.col-md-4
+                                    div(title=" buddy.description").thumbnail
+                                        img(src="http://api.adorable.io/avatars/90/" + buddy.name +".png", alt=Avatar de buddy.name, width=90, height=90)
+                                        div.caption
+                                            strong buddy.name
+                        else
+                            div.col-md-12
+                                div.well
+                                    Vous n'avez pas encore ajouté de coupaing !
+                div.col-md-4
+                    h3 Ajouter un coupaing
+                    form(action="./" method="post")
+                        fieldset
+                            if hasErrors
+                                div.alert.alert-danger
+                                    strong Oops !
+                                    On dirait que vous avez oublié de remplir chaque champs du formulaire
+                            if hasErrors
+                                div.form-group.has-error
+                            else
+                                div.form-group.post.name
+                                    label(for="name").control-label Nom:
+                                    if hasErrors
+                                        input(type="text" name="name" placeholder="Nom du coupaing" value="${post.name}").form-control
+                                    else
+                                        input(type="text" name="name" placeholder="Nom du coupaing" value="").form-control
+                            if hasErrors
+                                div.form-group.has-error
+                            else
+                                div.form-group.post.name
+                                    label(for="description").control-label Description:
+                                    if hasErrors
+                                        textarea(name="description" placeholder="Description du coupaing").form-control ${post.description}
+                                    else
+                                         textarea(name="description" placeholder="Description du coupaing").form-control
+                                    p.help-block Faites court, on manque de place !
+                                div.text-center
+                                    button(type="submit").btn.btn-info Ajouter un coupaing
+                    h3 Supprimer les coupaings
+                       p Ils seront perdus à jamais, mais vous pourrez toujours en créer d'autres…
+                    div.text-center
+                        a(href="./?clean").btn.btn-danger Supprimer les coupaings
+                div.col-md-4
+                    h3 Qu'est-ce qui se passe ici ?
+                     p Sur cette page, un script PHP affiche une série de em coupaings/, stockés dans un fichier json.
+                    p Un formulaire permet d'ajouter un nouveau coupaing et de la sauvegarder, toujours via PHP.
+                     h3 Qu'est-ce qu'on va faire ?
+                    p
+                        Chaque ajout de coupaing entraîne un rechargement de la page, c'est quand même pas très cool. Grâce à  strong jQuery/, nous allons faire cette opération en AJAX.br
+                    p    Ça va nous demander de modifier em un peu/ le code PHP.
+
+            footer.row
+                div.col-md-6.col-md-offset-6.text-right
+                    small MMI 2015-2016 - a(href="https://github.com/hepl-mmi/meet-ajax) hepl-mmi/meet-ajax
+        script(type="text/template")#form-error-message
+            div.alert.alert-danger
+                strong Oops !
+                On dirait que vous avez oublié de remplir chaque champs du formulaire !
+        script(type="text/template")#buddy-element
+            div.col-md-4
+                div.thumbnail
+                    img(src="", alt="", width="90", height="90")
+                    div.caption
+                        strong
+script( src='js/jquery.min.js' )
+script( src='js/script.js' )
