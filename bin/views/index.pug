@@ -3,7 +3,7 @@ html
     head
         meta(charset="utf-8")
         title(lang="en") Meet AJAX
-        link(rel="stylesheet", href="css/bootstrap.min.css")
+        link(rel="stylesheet",   href="css/bootstrap.min.css")
     body
         main.container
             header.row.page-header
@@ -20,7 +20,7 @@ html
                                     div(title=" buddy.description").thumbnail
                                         img(src="http://api.adorable.io/avatars/90/" + buddy.name +".png", alt=Avatar de buddy.name, width=90, height=90)
                                         div.caption
-                                            strong buddy.name
+                                            strong = buddy.name
                         else
                             div.col-md-12
                                 div.well
@@ -31,7 +31,7 @@ html
                         fieldset
                             if hasErrors
                                 div.alert.alert-danger
-                                    strong Oops !
+                                    #[strong Oops !]
                                     On dirait que vous avez oublié de remplir chaque champs du formulaire
                             if hasErrors
                                 div.form-group.has-error
@@ -65,7 +65,7 @@ html
                      h3 Qu'est-ce qu'on va faire ?
                     p
                         Chaque ajout de coupaing entraîne un rechargement de la page, c'est quand même pas très cool. Grâce à  strong jQuery/, nous allons faire cette opération en AJAX.br
-                    p    Ça va nous demander de modifier em un peu/ le code PHP.
+                    p    Ça va nous demander de modifier #[em un peu] le code PHP.
 
             footer.row
                 div.col-md-6.col-md-offset-6.text-right
